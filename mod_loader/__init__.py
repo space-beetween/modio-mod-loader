@@ -3,7 +3,7 @@ import os
 import modio
 
 from .scrappers import ModUrlScrapper
-from .downloader import Downloader
+from .downloaders import Downloader
 from .config import config
 from .exceptions import ModFileNotFound, WrongUrl
 
