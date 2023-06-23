@@ -19,11 +19,11 @@ class ModUrlScrapper(AbstractScrapper):
     def scrap(cls, url: str) -> Optional[Tuple[Union[str, Any]]]:
         """ Extracts the game id and mod id from the url """
 
-        matches = cls.pattern.search(url)
-        if matches is None:
+        match = cls.pattern.search(url)
+        if not match:
             return None
 
-        groups = matches.groups()
+        groups = match.groups()
         if len(groups) != 2:
             return None
 
