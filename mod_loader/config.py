@@ -11,11 +11,10 @@ class Config:
     def __init__(
         self,
         modio_api_key: str,
-        mod_directory_path: Optional[Union[str, Path]] = None
+        mod_directory_path: Optional[Union[str, Path]] = "mods"
     ) -> None:
-        if mod_directory_path is None:
-            mod_directory_path = 'mods'
-        mod_directory_path = Path(mod_directory_path)
+        if isinstance(mod_directory_path, str):
+            mod_directory_path = Path(mod_directory_path)
 
         kwargs = locals().copy()
         kwargs.pop('self')
